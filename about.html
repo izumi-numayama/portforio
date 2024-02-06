@@ -8,23 +8,26 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/about.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./js/move.js"></script>
 </head>
 
 <body>
     <header>
         <nav class="header-nav">
-            <ul>
-                <li class="gNav">
-                    <a href="#Works">● Works</a>
-                </li>
-                <li class="gNav">
-                    <a href="#About">● About</a>
-                </li>
-            </ul>
+
+            <div class="humburger"><span></span></div>
+            <div class="sp-nav">
+                <ul>
+                    <li>
+                        <a href="./index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="./works.html">Works</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
-        <div class="siteTtl">
-            mamorable design
-        </div>
     </header>
 
     <section id="About">
@@ -58,11 +61,11 @@
                     </p>
                 </div>
             </div>
-            <img src="./img/pc4.jpeg" alt="winter" class="winter">
             <div class="about-img">
-                <img src="./img/pc1@2x.png" alt="spring" class="about-img-inner"><img src="./img/pc2@2x.png"
-                    alt="summer" class="about-img-inner"><img src="./img/pc3@2x.png" alt="autumn"
-                    class="about-img-inner">
+                <picture>
+                    <source srcset="./img/aboutsp.png" media="(max-width: 767px)">
+                    <img src="./img/aboutpc.png" alt="spring" class="about-img-inner">
+                </picture>
             </div>
             <p class="about-me">沼山いずみ<span class="about-me-ro">Izumi Numayama</span></p>
             <p class="about-me-text">
@@ -120,6 +123,13 @@
     <footer class="copyright">
         &copy;︎memorable design
     </footer>
+
+    <script>
+        $('.humburger').on('click', function () {
+            $('.sp-nav').fadeToggle();
+            $('.humburger').toggleClass('open');
+        });
+    </script>
 </body>
 
 </html>
